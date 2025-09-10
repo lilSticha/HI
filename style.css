@@ -74,3 +74,26 @@ header img {
 .detail h2 {
     color: #ff6b6b;
 }
+/* Стиль для Git / VCS блоку */
+.detail h2 {
+    color: #ff6b6b;
+}
+
+.detail h3 {
+    color: #f0a500;
+    margin-top: 15px;
+}
+
+.detail ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.detail a {
+    color: #4fc3f7;
+    text-decoration: none;
+}
+
+.detail a:hover {
+    text-decoration: underline;
+}
