@@ -1,12 +1,116 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2-KT-22</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моє портфоліо</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background-color: #fff;
+        }
+        header img {
+            width: 200px;
+            border-radius: 10px;
+        }
+        header .intro {
+            max-width: 600px;
+        }
+        header .intro h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        header .intro p {
+            font-size: 20px;
+            color: #555;
+        }
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+            gap: 20px;
+        }
+        .skill-box {
+            background-color: #fff;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .skill-box:hover {
+            transform: translateY(-5px);
+        }
+        .detail {
+            display: none;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-  <h1>Stychuk Ivan</h1>
-  <p>jarfile+gotker-verdaw</p>
+
+<header>
+    <div class="intro">
+        <h1>Івась</h1>
+        <p>QA та Тестування</p>
+    </div>
+    <img src="photo.jpg" alt="Моє фото">
+</header>
+
+<section class="skills">
+    <div class="skill-box" data-detail="detail1">Тестування Web</div>
+    <div class="skill-box" data-detail="detail2">Тестування Мобільних</div>
+    <div class="skill-box" data-detail="detail3">Автоматизація</div>
+</section>
+
+<div id="detail1" class="detail">
+    <h2>Тестування Web</h2>
+    <p>Тут можна написати про свій досвід тестування веб-застосунків, перевірку форм, UI, навігації та баг-трекінг.</p>
+</div>
+<div id="detail2" class="detail">
+    <h2>Тестування Мобільних</h2>
+    <p>Тут описуєш роботу з мобільними додатками, перевірку на різних платформах та пристроях.</p>
+</div>
+<div id="detail3" class="detail">
+    <h2>Автоматизація</h2>
+    <p>Тут можна розповісти про знайомство з Selenium, Postman, або написання тестових скриптів.</p>
+</div>
+
+<script>
+    const boxes = document.querySelectorAll('.skill-box');
+    boxes.forEach(box => {
+        box.addEventListener('click', () => {
+            const detailId = box.getAttribute('data-detail');
+            const detailDiv = document.getElementById(detailId);
+
+            // приховуємо всі деталі
+            document.querySelectorAll('.detail').forEach(d => d.style.display = 'none');
+
+            // показуємо обрану
+            detailDiv.style.display = 'block';
+        });
+    });
+</script>
+
 </body>
 </html>
